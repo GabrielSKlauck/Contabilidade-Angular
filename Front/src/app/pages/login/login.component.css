@@ -1,7 +1,7 @@
 #bigger-content{
     background-color: white;
     width: 18rem;
-    height: 15rem;
+    height: 16rem;
     border-radius: 20px;
     box-shadow: 1px 1px 5px black;
 }
@@ -20,8 +20,15 @@ form{
 input{
     margin-top: 6px;
     width: 15rem;
+    margin-left: 8px;
+}
+div{
+    margin-top: 10px;
 }
 button{
     margin-top: 5px;
-    
+    margin-left: 8px;
+}
+a{
+    margin-left: 5px;
 }
