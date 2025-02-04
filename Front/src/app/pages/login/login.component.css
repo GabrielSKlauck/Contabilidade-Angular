@@ -6,7 +6,7 @@
     box-shadow: 1px 1px 5px black;
 }
 p{
-    margin-top: 10px;
+    margin-top: 14px;
     margin-left: 10px;
     font-size: x-large;
 }
@@ -31,4 +31,8 @@ button{
 }
 a{
     margin-left: 5px;
+}
+
+.selected{
+    font-weight: bold;
 }

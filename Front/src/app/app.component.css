@@ -1,4 +1,4 @@
-div{
+body > app-login{
     display: flex;
     justify-content: center; 
     align-items: center;

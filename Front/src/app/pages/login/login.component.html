@@ -1,3 +1,4 @@
+
 <div id="bigger-content">
     <p>Operador</p>
     <form action="">
@@ -5,8 +6,10 @@
         <input type="text" class="form-control" placeholder="Nome Operador">
         <input type="password" class="form-control" placeholder="Senha">
         <div>
-            <button class="btn btn-primary">Entrar</button>
-            <a href="">Entrar como visualização</a>
+            <button class="btn btn-primary" (click)="login()">Entrar</button>
+            <a [routerLink]="['/homepage']" >Entrar como visualização</a>
+            
         </div>
     </form>
 </div>
+
