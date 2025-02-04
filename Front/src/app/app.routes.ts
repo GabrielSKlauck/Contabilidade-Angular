@@ -6,8 +6,11 @@ import { ContasPagarComponent } from './pages/contas-pagar/contas-pagar.componen
 
 export const routes: Routes = [
     {path: '', component: LoginComponent, pathMatch: 'full'},
-    {path: 'homepage', component: HomepageComponent},
-    {path: 'contasPagar', component: ContasPagarComponent, outlet: "showContasPagar"},
+    {path: 'login', component: LoginComponent},
+    {path: 'homepage', component: HomepageComponent, children:[
+        {path: 'contasPagar', component: ContasPagarComponent, outlet: "ComponenteContasPagar"},
+    ]},
+    
 ];
 
 @NgModule({

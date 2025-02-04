@@ -2,7 +2,9 @@
 <nav>
     <ul class="nav flex-column mt-3 ms-3">
         <li class="nav-item my-2">
-            <a [routerLink]="[{ outlets: { name: 'showContasPagar' } }]">{{contasPagar}}</a>
+            <a [routerLink]="['/homepage',{outlets:{
+                'ComponenteContasPagar': ['contasPagar']
+            }}]">{{contasPagar}}</a>
         </li>
         <li class="nav-item my-2">
             {{contasReceber}}
@@ -13,5 +15,5 @@
     </ul>
 </nav>
 
-<router-outlet name="showContasPagar"></router-outlet>
+<router-outlet name="ComponenteContasPagar"></router-outlet>
 
