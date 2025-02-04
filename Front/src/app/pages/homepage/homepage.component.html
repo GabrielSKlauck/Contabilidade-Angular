@@ -1,14 +1,17 @@
 <app-header></app-header>
 <nav>
-    <ul class="nav flex-column">
-        <li class="nav-item my-3">
-            <app-features></app-features>
+    <ul class="nav flex-column mt-3 ms-3">
+        <li class="nav-item my-2">
+            <a [routerLink]="[{ outlets: { name: 'showContasPagar' } }]">{{contasPagar}}</a>
         </li>
-        <li class="nav-item my-3">
-            <app-features></app-features>
+        <li class="nav-item my-2">
+            {{contasReceber}}
         </li>
-        <li class="nav-item my-3">
-            <app-features></app-features>
+        <li class="nav-item my-2">
+            {{saldo}}
         </li>
     </ul>
 </nav>
+
+<router-outlet name="showContasPagar"></router-outlet>
+
