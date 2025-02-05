@@ -1,6 +1,6 @@
 #bigger-content{
     background-color: white;
-    width: 18rem;
+    width: 20rem;
     height: 16rem;
     border-radius: 20px;
     box-shadow: 1px 1px 5px black;
@@ -19,7 +19,7 @@ form{
 }
 input{
     margin-top: 6px;
-    width: 15rem;
+    width: 18rem;
     margin-left: 8px;
 }
 div{
