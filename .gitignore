@@ -41,6 +41,6 @@ Front/typings
 Front/.DS_Store
 Front/Thumbs.db
 
-Backend/bin
-Backend/obj
+Backend/.bin
+Backend/.obj
 Backend/.vs
