@@ -1,4 +1,5 @@
-﻿using Backend.DTO;
+﻿using Backend.Contracts.Repository;
+using Backend.DTO;
 using Backend.Entity;
 using Backend.Tools;
 using Dapper;
@@ -7,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace Backend.Repository
 {
-    public class UserRepository : Connection
+    public class UserRepository : Connection, IUserRepository
     {
         public async Task<UserTokenDTO> Login(UserLoginDTO user)
         {
