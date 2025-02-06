@@ -5,7 +5,7 @@ namespace Backend.Tools
 {
     public class Connection
     {
-        protected string connectionString = "Server=localhost;Database=contabilidadeangular;User=root;Password=root;";
+        protected string connectionString = "Server=localhost;Database=contabilidade_angular;User=root;Password=root;";
         protected MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
