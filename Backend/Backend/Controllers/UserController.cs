@@ -16,6 +16,13 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> AddUser(UserDTO user)
+        {
+            await _userRepository.addUser(user);
+            return Ok();
+        }
+
+        [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login(UserLoginDTO user)
         {

@@ -1,9 +1,7 @@
-﻿namespace Backend.Entity
+﻿namespace Backend.DTO
 {
-    public class UserEntity
+    public class UserDTO
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public string Email { get; set; }

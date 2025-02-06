@@ -10,9 +10,19 @@ namespace Backend.Repository
 {
     public class UserRepository : Connection, IUserRepository
     {
+        private Cryptography crypto = new Cryptography(SHA512.Create());
+        public async Task addUser(UserDTO user)
+        {
+            user.Password = crypto.CriptografarSenha(user.Password);
+
+            string sql = @$"INSERT INTO USER (Name, Email, Password, Empresa_Id)
+                        VALUES(@Name, @Email, @Password, @Empresa_Id)";
+            await Execute(sql, user);
+        }
+
         public async Task<UserTokenDTO> Login(UserLoginDTO user)
         {
-            var crypto = new Cryptography(SHA512.Create());
+            
             user.Password = crypto.CriptografarSenha(user.Password);
 
             string sql = "SELECT * FROM USER WHERE Name = @Name AND Password = @Password";
