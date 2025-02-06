@@ -1,0 +1,46 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+Front/dist
+Front/tmp
+Front/out-tsc
+Front/bazel-out
+
+# Node
+Front/node_modules
+Front/npm-debug.log
+Front/yarn-error.log
+
+# IDEs and editors
+Front/.idea/
+Front/.project
+Front/.classpath
+Front/.c9/
+Front/.launch
+Front/.settings/
+Front/.sublime-workspace
+
+# Visual Studio Code
+Front/.vscode/*
+Front/.vscode/settings.json
+Front/.vscode/tasks.json
+Front/.vscode/launch.json
+Front/.vscode/extensions.json
+Front/.history/*
+
+# Miscellaneous
+Front/.angular/cache
+Front/.sass-cache/
+Front/connect.lock
+Front/coverage
+Front/libpeerconnection.log
+testem.log
+Front/typings
+
+# System files
+Front/.DS_Store
+Front/Thumbs.db
+
+Backend/bin
+Backend/obj
+Backend/.vs
