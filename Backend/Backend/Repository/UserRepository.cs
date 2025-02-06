@@ -25,7 +25,7 @@ namespace Backend.Repository
             
             user.Password = crypto.CriptografarSenha(user.Password);
 
-            string sql = "SELECT * FROM USER WHERE Name = @Name AND Password = @Password";
+            string sql = "SELECT * FROM USER WHERE Email = @Email AND Password = @Password";
             UserEntity userLogin = await GetConnection().QueryFirstAsync<UserEntity>(sql, user);
 
             return new UserTokenDTO
