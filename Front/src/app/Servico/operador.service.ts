@@ -15,7 +15,6 @@ export class OperadorService {
     login(operador: Operador){
       return new Promise((resolve) =>{
          window.localStorage.setItem('token','meu-token');
-         window.localStorage.setItem('user',operador.id+"");
          resolve(true);
       })
     }

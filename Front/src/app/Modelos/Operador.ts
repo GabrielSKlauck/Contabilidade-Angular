@@ -1,6 +1,5 @@
 export class Operador{
-    id!: number;
-    cnpj!: string;
-    nome!: string;
-    senha!: number;
+    cnpj: string = "";
+    email: string = "";
+    senha: number = 0;
 }    
