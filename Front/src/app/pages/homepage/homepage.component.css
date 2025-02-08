@@ -3,29 +3,31 @@ app-header{
     height: 70px;
     display: block;
 }
-div{
+
+#itens-operator{
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    display: flex;
+}
+#content-list{
+    background-color: rgb(58, 58, 199);
+    width: 410px;
+    border-radius: 20px;
+}
+#bigger-content{
     width: 100%;
     height: 100%;
     display: flex;
     margin-top: 15px;
 }
-nav{
-    background-color: rgb(58, 58, 199);
-    color: white;
-    height: 100%;
-    width: 10rem;
-    max-width: 160px;
-    margin-top: 30px;
-    border-top-right-radius: 20px;
-    border-top-right-radius: 20px;
-    text-align: center;
-}
 ul{
     list-style: none;
-    position: absolute;
 }
 li{
     cursor: pointer;
+    color: #fff;
+    margin-left: 18px;
 }
 
 a{

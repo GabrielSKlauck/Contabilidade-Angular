@@ -1,20 +1,23 @@
 <app-header></app-header>
-<div>
-    <nav>
-        <ul class="nav flex-column mt-3 ms-3">
-            <li class="nav-item my-2">
+<div id="itens-operator">
+    <div id="content-list">
+        <ul class="nav">
+            <li class="nav-item">
                 <a [routerLink]="['/homepage',{outlets:{
                     'ComponenteContasPagar': ['contasPagar']
                 }}]">{{contasPagar}}</a>
             </li>
-            <li class="nav-item my-2">
+            <li class="nav-item">
                 {{contasReceber}}
             </li>
-            <li class="nav-item my-2">
+            <li class="nav-item">
                 {{saldo}}
-            </li>
+            </li   >
         </ul>
-    </nav>
+    </div>
+</div>
+<div id="bigger-content">
+    
     
     <router-outlet name="ComponenteContasPagar"></router-outlet>
 </div>
