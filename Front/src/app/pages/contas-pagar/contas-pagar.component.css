@@ -1,9 +1,7 @@
 #externa{
     width: 55rem;
-    height: 55rem;
+    height: 35rem;
     border-radius: 20px;
-    margin-top: 28px;
-    margin-left: 10rem;
     box-shadow: black 0px 0px 6px;;
 }
 ul{
