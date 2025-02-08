@@ -1,11 +1,11 @@
-<app-header></app-header>
+<app-header (click)="changeWelcome()"></app-header>
 <div id="itens-operator">
     <div id="content-list">
         <ul class="nav">
             <li class="nav-item">
                 <a [routerLink]="['/homepage',{outlets:{
                     'ComponenteContasPagar': ['contasPagar']
-                }}]">{{contasPagar}}</a>
+                }}]" (click)="changeWelcome()">{{contasPagar}}</a>
             </li>
             <li class="nav-item">
                 {{contasReceber}}
@@ -17,7 +17,10 @@
     </div>
 </div>
 <div id="bigger-content">
-    
+    <div id="content-welcome" *ngIf="showWelcome">
+        <h1>Bem vindo</h1>
+        <h3>Selecione uma operação para começar</h3>
+    </div>
     <router-outlet name="ComponenteContasPagar"></router-outlet>
 </div>
 

@@ -38,3 +38,10 @@ a{
     align-items: center;
     margin-top: 15px;
 }
+
+#content-welcome{
+    border-radius: 20px;
+    width: 32rem;
+    height: 10rem;
+    text-align: center;
+}
