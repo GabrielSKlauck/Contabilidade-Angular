@@ -21,8 +21,6 @@ export class HomepageComponent {
   changeWelcome(){
     if(this.showWelcome == true){
       this.showWelcome = false;
-    }else{
-      this.showWelcome = true;
     }
   }
 }
