@@ -1,5 +1,6 @@
-export interface Operador{
-    cnpj: string;
-    email: string;
-    senha: string;
+export class Operador{
+    id: number
+    name: string
+    email: string
+    empresa_Id: string
 }    

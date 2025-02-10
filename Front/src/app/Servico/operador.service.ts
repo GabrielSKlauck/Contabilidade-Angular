@@ -16,13 +16,19 @@ export class OperadorService {
   login(credenciais: {cnpj:string, email: string, password: string }): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     
-    return this.http.post<{ token: string }>(
+    return this.http.post<{ token: string, user: Operador }>(
       `${this.apiUrl}/user/login`,
       JSON.stringify(credenciais),
       { headers }
     ).pipe(
       map(response => {
         localStorage.setItem('token', response.token);
+        localStorage.setItem('user', JSON.stringify({
+          id: response.user.id,
+          nome: response.user.name,
+          email: response.user.email,
+          empresaId: response.user.empresa_Id,
+        }))
         this.authSubject.next(true);
         return response;
       })

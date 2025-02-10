@@ -2,6 +2,9 @@
     <nav class="nav navbar">
         <h2 class="ms-5"><a [routerLink]="['/homepage']"><i>GK</i></a></h2>
 
-        <button class="btn btn-primary me-5 px-4" (click)="logout()">Sair</button>
+        <div>
+            <h2>Operador: {{ user.nome }}</h2>
+            <button class="btn btn-primary me-5 px-4" (click)="logout()">Sair</button>
+        </div>
     </nav>
 </header>
