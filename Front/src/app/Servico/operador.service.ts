@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Operador } from '../Modelos/Operador';
 
 @Injectable({
@@ -8,16 +8,26 @@ import { Operador } from '../Modelos/Operador';
 })
 export class OperadorService {
 
-  url:string = "caminho";
+  constructor(private http: HttpClient) { }
+  private apiUrl = 'https://sua-api.com';
+  private authSubject = new BehaviorSubject<boolean>(this.hasToken());
 
-  constructor(private http:HttpClient) { }
+  login(cnpj:string, email: string, senha: string): Observable<any> {
+    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, { email, senha })
+      .pipe(
+        map(response => {
+          localStorage.setItem('token', response.token);
+          this.authSubject.next(true);
+          return response;
+        })
+      );
+  }
 
-    login(operador: Operador){
-      return new Promise((resolve) =>{
-         window.localStorage.setItem('token','meu-token');
-         resolve(true);
-      })
-    }
+  isAuthenticated(): Observable<boolean> {
+    return this.authSubject.asObservable();
+  }
 
-  
+  private hasToken(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

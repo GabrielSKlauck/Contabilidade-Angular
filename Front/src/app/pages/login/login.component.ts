@@ -14,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent {
 
-  constructor(private router:Router){}
+  constructor(private servico:OperadorService, private router:Router){}
 
   formulario = new FormGroup({
     cnpj: new FormControl('',[Validators.required, Validators.maxLength(18), Validators.minLength(18)]),
@@ -22,13 +22,10 @@ export class LoginComponent {
     senha:new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(12)])
   })
 
-  servicoLogin: OperadorService | undefined;
-
-  // async login(): {
-  //   try{
-  //     const resultado = await this.servicoLogin.login()
-  //   }
-  //   console.log("Funca")
-  //   // this.router.navigate(['/homepage']);
-  // }
+  login() {
+    this.servico.login(this.formulario.value.cnpj, this.formulario.value.email, this.formulario.value.senha).subscribe({
+      next: () => this.router.navigate(['/dashboard']),
+      error: err => alert('Erro ao fazer login: ' + err.error.message)
+    });
+  }
 }

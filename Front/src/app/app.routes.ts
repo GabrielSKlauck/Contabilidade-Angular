@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ContasPagarComponent } from './pages/contas-pagar/contas-pagar.component';
+import { AuthGuard } from './Servico/auth.guard';
 
 export const routes: Routes = [
     {path: '', component: LoginComponent, pathMatch: 'full'},
     {path: 'login', component: LoginComponent},
-    {path: 'homepage', component: HomepageComponent, children:[
+    {path: 'homepage', canActivate: [AuthGuard], component: HomepageComponent, children:[
         {path: 'contasPagar', component: ContasPagarComponent, outlet: "ComponenteContasPagar"},
-    ]},
+    ], },
     
 ];
 
