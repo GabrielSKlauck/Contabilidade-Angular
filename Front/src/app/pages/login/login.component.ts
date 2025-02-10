@@ -16,7 +16,6 @@ import { Operador } from '../../Modelos/Operador';
 export class LoginComponent {
 
   constructor(private servico:OperadorService, private router:Router){}
-
   formulario = new FormGroup({
     cnpj: new FormControl('',[Validators.required, Validators.maxLength(18), Validators.minLength(18)]),
     email: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -24,14 +23,17 @@ export class LoginComponent {
   })
 
   login() {
-    const jsonLogin = {
-      cnpj: this.formulario.value.cnpj,
-      email: this.formulario.value.email,
-      password: this.formulario.value.senha
+    if(this.formulario.valid){
+      const jsonLogin = {
+        cnpj: this.formulario.value.cnpj,
+        email: this.formulario.value.email,
+        password: this.formulario.value.senha
+      }
+      this.servico.login(jsonLogin).subscribe({
+        next: () => this.router.navigate(['/homepage']),
+        error: err => console.log(err.error.message)
+      });
     }
-    this.servico.login(jsonLogin).subscribe({
-      next: () => this.router.navigate(['/homepage']),
-      error: err => console.log(err.error.message)
-    });
+    
   }
 }

@@ -2,39 +2,39 @@
 <div id="bigger-content">
     <p id="title">Login operador</p>
     <form action="" class="ms-2" [formGroup]="formulario">
-        @if(formulario.get('cnpj')?.hasError('required') && formulario.get('cnpj')?.touched){
-            <p class="alert alert-danger alert-modify">Insira o CNPJ</p>
+        @if(formulario.get('cnpj').hasError('required') && formulario.get('cnpj').touched){
+            <p class="alert alert-danger alert-modify">Insira o CNPJ</p> 
         }
-        @if(formulario.get('cnpj')?.hasError('minlength') && formulario.get('cnpj')?.touched){
+        @if(formulario.get('cnpj').hasError('minlength') && formulario.get('cnpj').touched){
             <p class="alert alert-danger alert-modify">Insira um CNPJ valido</p>
         }
-        @if(formulario.get('cnpj')?.hasError('maxlength') && formulario.get('cnpj')?.touched){
+        @if(formulario.get('cnpj').hasError('maxlength') && formulario.get('cnpj').touched){
             <p class="alert alert-danger alert-modify">Insira um CNPJ valido</p>
         }
         <input type="text" class="form-control" formControlName="cnpj" placeholder="CNPJ Empresa" mask="(00) 0000-0000">
 
 
-        @if(formulario.get('email')?.hasError('required') && formulario.get('email')?.touched){
+        @if(formulario.get('email').hasError('required') && formulario.get('email').touched){
             <p class="alert alert-danger alert-modify">Insira um email</p>
         }
-        @if(formulario.get('email')?.hasError('minlength') && formulario.get('email')?.touched){
+        @if(formulario.get('email').hasError('minlength') && formulario.get('email').touched){
             <p class="alert alert-danger alert-modify">Insira um email valido</p>
         }
         <input type="text" class="form-control" formControlName="email" placeholder="Email Operador">
 
 
-        @if(formulario.get('senha')?.hasError('required') && formulario.get('senha')?.touched){
+        @if(formulario.get('senha').hasError('required') && formulario.get('senha').touched){
             <p class="alert alert-danger alert-modify">Insira uma senha</p>
         }
-        @if(formulario.get('senha')?.hasError('minlength') && formulario.get('senha')?.touched){
+        @if(formulario.get('senha').hasError('minlength') && formulario.get('senha').touched){
             <p class="alert alert-danger alert-modify">Insira uma senha valida</p>
         }
-        @if(formulario.get('senha')?.hasError('maxlength') && formulario.get('senha')?.touched){
+        @if(formulario.get('senha').hasError('maxlength') && formulario.get('senha').touched){
             <p class="alert alert-danger alert-modify">Insira uma senha valida</p>
         }
         <input type="password" class="form-control" formControlName="senha" placeholder="Senha">
         <div>
-            <button class="btn btn-primary" (click)="login()">Entrar</button>
+            <button class="btn btn-primary" (click)="login()" [disabled]="formulario.invalid">Entrar</button>
             <a [routerLink]="['/homepage']" class="ms-5" >Entrar como visualização</a>
             
         </div>
