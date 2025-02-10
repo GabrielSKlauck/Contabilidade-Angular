@@ -36,4 +36,9 @@ export class OperadorService {
   private hasToken(): boolean {
     return !!localStorage.getItem('token');
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.authSubject.next(false);
+  }
 }
