@@ -2,8 +2,8 @@
     <nav class="nav navbar">
         <h2 class="ms-5"><a [routerLink]="['/homepage']"><i>GK</i></a></h2>
 
-        <div>
-            <h2>Operador: {{ user.nome }}</h2>
+        <div class="d-flex">
+            <h4 class="me-5 position-relative">Logado como: {{ user.nome }}</h4>
             <button class="btn btn-primary me-5 px-4" (click)="logout()">Sair</button>
         </div>
     </nav>
