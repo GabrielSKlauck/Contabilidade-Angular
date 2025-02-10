@@ -1,5 +1,5 @@
-export class Operador{
+export interface Operador{
     cnpj: string;
     email: string;
-    senha: number;
+    senha: string;
 }    

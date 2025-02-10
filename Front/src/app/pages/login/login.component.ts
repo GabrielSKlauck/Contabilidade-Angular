@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterModule } from '@angular/router';
 import { OperadorService } from '../../Servico/operador.service';
 import { HttpClient } from '@angular/common/http';
+import { Operador } from '../../Modelos/Operador';
 
 @Component({
   selector: 'app-login',
@@ -19,13 +20,18 @@ export class LoginComponent {
   formulario = new FormGroup({
     cnpj: new FormControl('',[Validators.required, Validators.maxLength(18), Validators.minLength(18)]),
     email: new FormControl('', [Validators.required, Validators.minLength(6)]),
-    senha:new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(12)])
+    senha:new FormControl('', [Validators.required, Validators.maxLength(50), Validators.minLength(5)])
   })
 
   login() {
-    this.servico.login(this.formulario.value.cnpj, this.formulario.value.email, this.formulario.value.senha).subscribe({
-      next: () => this.router.navigate(['/dashboard']),
-      error: err => alert('Erro ao fazer login: ' + err.error.message)
+    const jsonLogin = {
+      cnpj: this.formulario.value.cnpj,
+      email: this.formulario.value.email,
+      password: this.formulario.value.senha
+    }
+    this.servico.login(jsonLogin).subscribe({
+      next: () => this.router.navigate(['/homepage']),
+      error: err => console.log(err.error.message)
     });
   }
 }

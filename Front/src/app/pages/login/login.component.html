@@ -34,7 +34,7 @@
         }
         <input type="password" class="form-control" formControlName="senha" placeholder="Senha">
         <div>
-            <button class="btn btn-primary" >Entrar</button>
+            <button class="btn btn-primary" (click)="login()">Entrar</button>
             <a [routerLink]="['/homepage']" class="ms-5" >Entrar como visualização</a>
             
         </div>
