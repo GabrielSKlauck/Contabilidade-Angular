@@ -12,9 +12,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './homepage.component.css'
 })
 export class HomepageComponent {
-  contasPagar:string = "Contas a pagar";
-  contasReceber:string = "Contas a receber";
-  saldo:string = "Consular saldo";
 
   showWelcome: boolean = true;
 
