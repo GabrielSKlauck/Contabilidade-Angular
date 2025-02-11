@@ -23,6 +23,8 @@ export class LoginComponent {
   })
 
   login() {
+  //   this.router.navigate(['/homepage'])
+
     if(this.formulario.valid){
       const jsonLogin = {
         cnpj: this.formulario.value.cnpj,
@@ -35,5 +37,5 @@ export class LoginComponent {
       });
     }
     
-  }
+   }
 }

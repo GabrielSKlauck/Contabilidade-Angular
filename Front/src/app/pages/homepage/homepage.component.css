@@ -18,6 +18,7 @@ app-header{
 }
 ul{
     list-style: none;
+    height: 100%;
 }
 li{
     cursor: pointer;
