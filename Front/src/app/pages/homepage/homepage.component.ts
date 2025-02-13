@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomepageComponent {
 
-  showWelcome: boolean = true;
+  showWelcome: boolean = false;
 
   changeWelcome(){
     if(this.showWelcome == true){

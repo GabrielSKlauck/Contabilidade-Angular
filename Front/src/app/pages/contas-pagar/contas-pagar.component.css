@@ -1,18 +1,33 @@
-#externa{
-    width: 55rem;
+#externa {
+    width: 68rem;
     height: 35rem;
     border-radius: 20px;
-    box-shadow: black 0px 0px 6px;;
-}
-ul{
-    border-radius: 20px;
-    
-}
-li{
-    
-    padding: 10px;
-}
-a{
-    color: black;
+    box-shadow: black 0px 0px 6px;
+    ;
 }
 
+tbody {
+    display: block;
+    height: 165px;
+    overflow: auto;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#div-itens-table {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#tabela-lancados {
+    margin-top: 15px;
+    margin-inline: 5px;
+    width: 66rem;
+    height: 206px;
+}

@@ -18,15 +18,15 @@ namespace Backend.Controllers
         [HttpGet("GetById")]
         public async Task<IActionResult> getEmpresa(int id)
         {
-            await _empresaRepository.getEmpresa(id);
-            return Ok();
+            
+            return Ok(await _empresaRepository.getEmpresa(id));
         }
 
         [HttpGet("GetValueById")]
         public async Task<IActionResult> getEmpresaValue(int id)
         {
-            await _empresaRepository.getEmpresaValue(id);
-            return Ok();
+            
+            return Ok(await _empresaRepository.getEmpresaValue(id));
         }
     }
 }
