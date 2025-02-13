@@ -15,7 +15,7 @@ namespace Backend.Repository
 
         public async Task<double> getEmpresaValue(int id)
         {
-            string sql = "SELECT VALUE FROM EMPRESA WHERE ID = @id";
+            string sql = "SELECT SALDO FROM EMPRESA WHERE ID = @id";
             return await GetConnection().QueryFirstAsync<double>(sql, new { id });
         }
     }
